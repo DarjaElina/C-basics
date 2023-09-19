@@ -24,7 +24,8 @@ jobs:
           ls -la
           date "+DATE: %D, TIME: %T"
       - name: Execute C code
-        run: echo "Executing placeholder..."
+        run: |
+          gcc *.c -o Output
       - name: Check artifact
         run: ls -la
       - name: Upload compiled Artifact
