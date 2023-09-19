@@ -19,5 +19,5 @@ jobs:
       - name: Initial check
         run: | 
           pwd
-          ls-la
+          ls -la
           date +"%d-%m-%y"
