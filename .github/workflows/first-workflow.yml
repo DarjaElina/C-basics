@@ -42,5 +42,12 @@ jobs:
     needs: compilation-work
     runs-on: ubuntu-22.04
     steps:
-      - name: Get artifact
-        run: echo "Get artifact placeholder...."
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: C-artifact
+      - name: Check 
+        run: ls -la 
+      - name: Show Output
+        run: ./Output
+        
