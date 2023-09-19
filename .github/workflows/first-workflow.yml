@@ -41,13 +41,17 @@ jobs:
   reuse-artifact:
     needs: compilation-work
     runs-on: ubuntu-22.04
+    env:
+      execute-file-name: Output
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v3
         with:
           name: C-artifact
       - name: Check 
-        run: ls -la 
+        run: |
+          ls -la
+          chmod +x ${{env.execute-file-name}}
       - name: Show Output
-        run: ./Output
+        run: ./${{env.execute-file-name}}
         
