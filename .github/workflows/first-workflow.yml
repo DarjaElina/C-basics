@@ -28,8 +28,15 @@ jobs:
           gcc *.c -o Output
       - name: Check artifact
         run: ls -la
+      - name: Get output
+        run: ./Output
       - name: Upload compiled Artifact
-        run: echo "upload placeholder...."
+        uses: actions/upload-artifact@v3
+        with:
+          name: C-artifact
+          path: | 
+            Output
+            *.c
 
   reuse-artifact:
     needs: compilation-work
