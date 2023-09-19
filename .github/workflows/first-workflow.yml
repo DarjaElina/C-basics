@@ -48,10 +48,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: C-artifact
-      - name: Check 
+      - name: Check and permissions
         run: |
-          ls -la
           chmod +x ${{env.execute-file-name}}
+          ls -la
       - name: Show Output
         run: ./${{env.execute-file-name}}
         
