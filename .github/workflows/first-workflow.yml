@@ -13,7 +13,7 @@ on:
       - synchronize
       - edited
 jobs:
-  test:
+  compilation-work:
     runs-on: ubuntu-20.04
     steps:
       - name: Get code first 
@@ -25,3 +25,14 @@ jobs:
           date "+DATE: %D, TIME: %T"
       - name: Execute C code
         run: echo "Executing placeholder..."
+      - name: Check artifact
+        run: la -la
+      - name: Upload compiled Artifact
+        run: echo "upload placeholder...."
+
+  reuse-artifact:
+    needs: compilation-work
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Get artifact
+        run: echo "Get artifact placeholder...."
