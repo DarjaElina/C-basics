@@ -1,0 +1,23 @@
+name: first workflow
+on:
+  push:
+    branches: 
+      - main
+      - dev/**
+      - dev-*
+  workflow_dispatch:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - edited
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Initial check
+        run: | 
+          pwd
+          la-la
+          date +"%d-%m-%y"
