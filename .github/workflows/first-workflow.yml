@@ -16,8 +16,12 @@ jobs:
   test:
     runs-on: ubuntu-20.04
     steps:
+      - name: Get code first 
+        uses: actions/checkout@v3
       - name: Initial check
         run: | 
           pwd
           ls -la
           date "+DATE: %D, TIME: %T"
+      - name: Execute C code
+        run: echo "Executing placeholder..."
